@@ -1,0 +1,2 @@
+json.extract! client, :id, :first_name, :last_name, :phone_number, :city, :state, :citizenship, :employment_status, :occupation, :investment_experience, :stock_exp, :bond_exp, :mutual_fund_exp, :option_exp, :ddp_exp, :reit_exp, :annuity_exp, :account_objective, :risk_tolerance, :account_time_horizon, :annual_income, :adjusted_net_worth, :liquid_net_worth, :account_liquidity_needs, :created_at, :updated_at
+json.url client_url(client, format: :json)

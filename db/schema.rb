@@ -10,10 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_20_155509) do
+ActiveRecord::Schema.define(version: 2018_11_20_200516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "clients", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "phone_number"
+    t.string "city"
+    t.string "state"
+    t.string "citizenship"
+    t.string "employment_status"
+    t.string "occupation"
+    t.boolean "investment_experience"
+    t.integer "stock_exp"
+    t.integer "bond_exp"
+    t.integer "mutual_fund_exp"
+    t.integer "option_exp"
+    t.integer "ddp_exp"
+    t.integer "reit_exp"
+    t.integer "annuity_exp"
+    t.string "account_objective"
+    t.string "risk_tolerance"
+    t.string "account_time_horizon"
+    t.string "annual_income"
+    t.string "adjusted_net_worth"
+    t.string "liquid_net_worth"
+    t.string "account_liquidity_needs"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "static_pages", force: :cascade do |t|
     t.string "home"

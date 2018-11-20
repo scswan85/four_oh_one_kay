@@ -1,0 +1,168 @@
+<%= form_with(model: client, local: true) do |form| %>
+  <% if client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+      <ul>
+      <% client.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row m-3">
+    <div class="col-md-4 p-1">
+      <%= form.text_field :first_name, placeholder: "First Name", class: "form-control" %>
+    </div>
+
+    <div class="col-md-4 p-1">
+      <%= form.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
+    </div>
+
+    <div class="col-md-4 p-1">
+      <%= form.text_field :phone_number, placeholder: "Phone Number", class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row m-3">
+    <div class="col-md-4 p-1">
+      <%= form.text_field :city, placeholder: "City", class: "form-control" %>
+    </div>
+
+    <div class="col-md-4 p-1">
+      <%= form.select :state, options_for_select(us_states), {prompt: "State"}, {class:"form-control text-secondary"} %>
+    </div>
+
+    <div class="col-md-4 p-1">
+      <%= form.select :citizenship, options_for_select([["U.S. Citizen", "U.S. Citizen"], ["Resident Alien", "Resident Alien"], ["Non-Resident Alien", "Non-Resident Alien"]]), {prompt: "Citizenship"}, {class:"form-control text-secondary"} %>
+    </div>
+  </div>
+
+  <div class="row m-3">
+    <div class="col-md-4 p-1">
+      <%= form.select :employment_status, options_for_select([["Employed", "Employed"], ["Self-Employed", "Self-Employed"], ["Retired", "Retired"], ["Un-Employed", "Un-Employed"], ["Disabled", "Disabled"]]), {prompt: "Employment Status"}, {class:"form-control text-secondary"}  %>
+    </div>
+
+    <div class="col-md-8 p-1">
+      <%= form.text_field :occupation, placeholder: "Occupation", class:"form-control" %>
+    </div>
+  </div>
+
+  <div class="row m-4">
+    <div class="form-group p-1">
+      <%= form.label :Do_you_have_investment_experience? %>
+      <%= form.select :investment_experience, options_for_select([["Yes", 1], ["No", 0]]), {prompt:"Select One"}, {class:"form-control text-secondary"} %>
+    </div>
+  </div>
+
+  <div class="row m-3">
+    <div class="col-md-3 p-1">
+      <%= form.label :stock_exp %>
+      <%= form.number_field :stock_exp, class: "form-control", min:0, placeholder: 0 %>
+    </div>
+
+    <div class="col-md-3 p-1">
+      <%= form.label :bond_exp %>
+      <%= form.number_field :bond_exp, class: "form-control", min:0, placeholder: 0 %>
+    </div>
+
+    <div class="col-md-3 p-1">
+      <%= form.label :mutual_fund_exp %>
+      <%= form.number_field :mutual_fund_exp, class: "form-control", min:0, placeholder: 0 %>
+    </div>
+
+    <div class="col-md-3 p-1">
+      <%= form.label :option_exp %>
+      <%= form.number_field :option_exp, class: "form-control", min:0, placeholder: 0 %>
+    </div>
+  </div>
+
+  <div class="row m-3">
+    <div class="col-md-3 p-1">
+      <%= form.label :ddp_exp %>
+      <%= form.number_field :ddp_exp, class: "form-control", min:0, placeholder:0 %>
+    </div>
+
+    <div class="col-md-3 p-1">
+      <%= form.label :reit_exp %>
+      <%= form.number_field :reit_exp, class: "form-control", min:0, placeholder:0 %>
+    </div>
+
+    <div class="col-md-3 p-1">
+      <%= form.label :annuity_exp %>
+      <%= form.number_field :annuity_exp, class: "form-control", min:0, placeholder:0 %>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+
+  <br />
+
+  <div class="row m-3">
+    <div class="col-md-4 p-1">
+      <%= form.select :account_objective, options_for_select([["Capital Preservation", "Capital Preservation"], ["Income", "Income"], ["Total Return", "Total Return"], ["Growth", "Growth"], ["Aggressive Growth", "Aggressive Growth"]]), {prompt: "Account Objective"}, {class:"form-control text-secondary"} %>
+    </div>
+
+    <div class="col-md-4 p-1">
+      <%= form.select :risk_tolerance, options_for_select([["Conservative", "Conservative"], ["Moderately Conservative", "Moderately Conservative"], ["Moderate", "Moderate"], ["Moderately Aggressive"], ["Moderately Aggressive", "Moderately Aggressive"], ["Significant Risk", "Significant Risk"]]), {prompt: "Risk Tolerance"}, {class:"form-control text-secondary"} %>
+    </div>
+
+    <div class="col-md-4 p-1">
+      <%= form.select :account_time_horizon, options_for_select([["4 years or less", "4 years or less"], ["5-8 years", "5-8 years"], ["More than 8 years", "More than 8 years"]]), {prompt: "Account time horizon"}, {class:"form-control text-secondary"} %>
+    </div>
+  </div>
+
+  <div class="row m-3">
+    <div class="col-md-3 p-1">
+      <%= form.label :annual_income %>
+      <%= form.select :annual_income, options_for_select([["$0-29,999", "$0-29,999"],
+                                                          ["30,000-49,999", "30,000-49,999"],
+                                                          ["50,000-74,999", "50,000-74,999"],
+                                                          ["75,000-99,999", "75,000-99-999"],
+                                                          ["100,000-149,999", "100,000-149,999"],
+                                                          ["150,000-249,999", "150,000-249,999"],
+                                                          ["250,000-399,999", "250,000-399,999"],
+                                                          ["400,000-Over", "400,000-Over"]]), {prompt: "Annual Income"}, {class:"form-control text-secondary"} %>
+    </div>
+
+    <div class="col-md-3 p-1">
+      <%= form.label :adjusted_net_worth %>
+      <%= form.select :adjusted_net_worth, options_for_select([["$0-74,999", "$0-74,999"],
+                                                               ["75,000-99,999", "75,000-99,999"],
+                                                               ["100,000-149,999", "100,000-149,999"],
+                                                               ["150,000-249,999", "150,000-249,999"],
+                                                               ["250,000-499,999", "250,000-499,999"],
+                                                               ["500,000-999,999", "500,000-999,999"],
+                                                               ["1,000,000-2,999,999", "1,000,000-2,999,999"],
+                                                               ["3,000,000-Over", "3,000,000-Over"]]), {prompt: "Adjusted Net Worth"}, {class:"form-control text-secondary"} %>
+    </div>
+
+    <div class="col-md-3 p-1">
+      <%= form.label :liquid_net_worth %>
+      <%= form.select :liquid_net_worth, options_for_select([["$0-74,999", "$0-74,999"],
+                                                             ["75,000-99,999", "75,000-99,999"],
+                                                             ["100,000-149,999", "100,000-149,999"],
+                                                             ["150,000-249,999", "150,000-249,999"],
+                                                             ["250,000-499,999", "250,000-499,999"],
+                                                             ["500,000-999,999", "500,000-999,999"],
+                                                             ["1,000,000-2,999,999", "1,000,000-2,999,999"],
+                                                             ["3,000,000-Over", "3,000,000-Over"]]), {prompt: "Liquid Net Worth"}, {class:"form-control text-secondary"} %>
+    </div>
+
+    <div class="col-md-3 p-1">
+      <%= form.label :account_liquidity_needs %>
+      <%= form.select :account_liquidity_needs, options_for_select([["None", "None"],
+                                                                    ["$1-4,999", "$1-4,999"],
+                                                                    ["5,000-9,999", "5,000-9,999"],
+                                                                    ["10,000-24,999", "10,000-24,999"],
+                                                                    ["25,000-49,999", "25,000-49,999"],
+                                                                    ["50,000-74,999", "50,000-74,999"],
+                                                                    ["75,000-99,999", "75,000-99,999"],
+                                                                    ["100,000-Over", "100,000-Over"]]), {prompt: "Account Liquidity Needs"}, {class:"form-control text-secondary"} %>
+    </div>
+  </div>
+
+  <div class="form-group text-center">
+    <%= form.submit 'Submit', class: "btn btn-success" %>
+  </div>
+<% end %>

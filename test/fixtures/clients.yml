@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  phone_number: MyString
+  city: MyString
+  state: MyString
+  citizenship: MyString
+  employment_status: MyString
+  occupation: MyString
+  investment_experience: false
+  stock_exp: 1
+  bond_exp: 1
+  mutual_fund_exp: 1
+  option_exp: 1
+  ddp_exp: 1
+  reit_exp: 1
+  annuity_exp: 1
+  account_objective: MyString
+  risk_tolerance: MyString
+  account_time_horizon: MyString
+  annual_income: MyString
+  adjusted_net_worth: MyString
+  liquid_net_worth: MyString
+  account_liquidity_needs: MyString
+
+two:
+  first_name: MyString
+  last_name: MyString
+  phone_number: MyString
+  city: MyString
+  state: MyString
+  citizenship: MyString
+  employment_status: MyString
+  occupation: MyString
+  investment_experience: false
+  stock_exp: 1
+  bond_exp: 1
+  mutual_fund_exp: 1
+  option_exp: 1
+  ddp_exp: 1
+  reit_exp: 1
+  annuity_exp: 1
+  account_objective: MyString
+  risk_tolerance: MyString
+  account_time_horizon: MyString
+  annual_income: MyString
+  adjusted_net_worth: MyString
+  liquid_net_worth: MyString
+  account_liquidity_needs: MyString
